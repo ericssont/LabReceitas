@@ -3,24 +3,26 @@ import "./Form.css";
 
 const Form = (props) => {
   const [form, setForm] = useState({});
-  const [ingredientes, setIngredientes] = useState([]);
-  const [selectedIngrediente, setSelectedIngrediente] = useState();
+  const [receitas, setReceitas] = useState([]);
+  const [selectedReceita, setSelectedReceita] = useState();
+  const [ingredientes, setIngrediente] = useState([]);
 
   useEffect(() => {
-    const ingrediente = JSON.parse(localStorage.getItem("selectedIngrediente"));
-    if (ingrediente) {
-      setSelectedIngrediente(ingrediente);
-      setForm(ingrediente);
+    const receita = JSON.parse(localStorage.getItem("selectedReceita"));
+    if (receita) {
+      setSelectedReceita(receita);
+      setForm(receita);
     }
-    const lista = JSON.parse(localStorage.getItem("ingredientes"));
+
+    const lista = JSON.parse(localStorage.getItem("receitas"));
     if (lista) {
-      setIngredientes(lista);
+      setReceitas(lista);
     }
   }, []);
 
   const handleChange = (event) => {
     setForm({
-      ...Form,
+      ...form,
       [event.target.name]: event.target.value,
     });
   };
@@ -39,6 +41,8 @@ const Form = (props) => {
     });
   };
 
+  // ********* Função de gravar as alter dos forms, inclusao e edição dos itens da lista **********
+
   const handleSubmit = (event) => {
     event.preventDefault();
     let array = [];
@@ -48,82 +52,92 @@ const Form = (props) => {
     if (!("semLactose" in form)) {
       formData.semLactose = false;
     }
-    console.log(selectedIngrediente);
+    console.log(selectedReceita);
 
     if (!("semGlutem" in form)) {
       formData.semGlutem = false;
     }
-    console.log(selectedIngrediente);
+    console.log(selectedReceita);
 
-    if (selectedIngrediente) {
-      const updateIngredientes = props.ingredientes.map((ingrediente) => {
-        if (
-          JSON.stringify(ingrediente) === JSON.stringify(selectedIngrediente)
-        ) {
+    if (selectedReceita) {
+      const updatedReceitas = props.receitas.map((receita) => {
+        if (JSON.stringify(receita) === JSON.stringify(selectedReceita)) {
           console.log(formData);
           return formData;
         } else {
-          return ingrediente;
+          return receita;
         }
       });
-      array = updateIngredientes;
+      array = updatedReceitas;
     } else {
-      array = [...props.ingredientes, formData];
-      console.log(...props.ingredientes);
+      array = [...props.receitas, formData];
+      console.log(...props.receitas);
     }
-    localStorage.removeItem("selectedIngrediente");
-    localStorage.setItem("ingredientes", JSON.stringify(array));
-    props.updateIngredientes(array);
+    localStorage.removeItem("selectedReceita");
+    localStorage.setItem("receitas", JSON.stringify(array));
+    props.updateReceitas(array);
     props.updateShowLista(true);
     props.updateAberto(false);
-};
-
-  const removeIngrediente = (selectedIngrediente) => {
-    const ingredienteIndex = ingredientes.findIndex(
-      (ingrediente) => JSON.stringify(ingrediente) === JSON.stringify(selectedIngrediente)
-    );
-    ingredientes.splice(ingredienteIndex, 1);
-    console.log(ingredientes);
-    localStorage.setItem("ingredientes", JSON.stringify(ingredientes));
-    props.updateIngredientes(ingredientes);
-    props.updateAberto(false);
-    props.updateShowLista(true);
-    localStorage.removeItem("selectedIngrediente");
   };
 
-  const handleCancel = () => {
+  //Exclusão de itens da lista
+
+  const removeReceita = (selectedReceita) => {
+    const receitaIndex = receitas.findIndex(
+      (receita) => JSON.stringify(receita) === JSON.stringify(selectedReceita)
+    );
+    receitas.splice(receitaIndex, 1);
+    console.log(receitas);
+    localStorage.setItem("receitas", JSON.stringify(receitas));
+    props.updateReceitas(receitas);
     props.updateAberto(false);
     props.updateShowLista(true);
-    localStorage.removeItem("selectedPet");
+    localStorage.removeItem("selectedReceita");
   };
 
   return (
-    <form onSubmit={(event) => handleSubmit(event)}>
-      <div className="form-row">
+    <form className="btn-form" onSubmit={(event) => handleSubmit(event)}>
+      <div className="btn-form">
         <label>
           Receita: <br />
           <input
             type="text"
             name="receita"
             onChange={(event) => handleChange(event)}
-            value={form.nome}
+            value={form.receita}
             required
           />
         </label>
       </div>
-      <div className="form-row">
+      <div className="btn-form">
         <label>
           Ingredientes: <br />
-          <input
+          <div>
+            <textarea
+              name="ingredientes"
+              value={form.ingredientes}
+              onChange={(event) => handleChange(event)}
+              required
+            />
+            <ul>{ingredientes}</ul>
+          </div>
+        </label>
+      </div>
+      <div className="btn-form">
+        <label>
+          Modo de preparo: <br />
+          <textarea
             type="text"
-            name="ingredientes"
+            name="preparo"
             onChange={(event) => handleChange(event)}
-            value={form.ingredi}
+            value={form.preparo}
             required
           />
         </label>
       </div>
-      <div className="form-row">
+
+      <div className="btn-form">
+        <h3>Restrições:</h3>
         <label>
           Sem Glúten
           <input
@@ -133,27 +147,28 @@ const Form = (props) => {
             checked={form.semGlutem}
           />
         </label>
-      </div>
-      <div className="form-row">
-        <label>
-          Sem Lactose
-          <input
-            type="checkbox"
-            name="semLactose"
-            onChange={(event) => handleSemLactose(event)}
-            checked={form.semLactose}
-          />
-        </label>
+
+        <div className="btn-form">
+          <label>
+            Sem derivados de leite
+            <input
+              type="checkbox"
+              name="semLactose"
+              onChange={(event) => handleSemLactose(event)}
+              checked={form.semLactose}
+            />
+          </label>
+        </div>
       </div>
 
       <button type="submit" className="btn">
-        {selectedIngrediente ? "Editar" : "Adicionar"}
+        {selectedReceita ? "Alterar" : "Adicionar"}
       </button>
-      {selectedIngrediente ? (
+      {selectedReceita ? (
         <button
           onClick={(event) => {
             event.preventDefault();
-            removeIngrediente(selectedIngrediente);
+            removeReceita(selectedReceita);
           }}
           className="btn"
         >
@@ -162,14 +177,6 @@ const Form = (props) => {
       ) : (
         <></>
       )}
-      <button
-        className="btn"
-        onClick={() => {
-          handleCancel();
-        }}
-      >
-        Cancelar
-      </button>
     </form>
   );
 };

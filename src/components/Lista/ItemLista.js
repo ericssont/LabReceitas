@@ -1,30 +1,35 @@
+import "./Lista.css";
+
 const ItemLista = (props) => {
-    const {ingrediente} = props;
+  const { receita } = props;
 
-    const selectIngrediente = (ingrediente) => {
-        localStorage.setItem('selectedIngrediente',JSON.stringify(ingrediente));
-    };
+  const selectReceita = (receita) => {
+    localStorage.setItem("selectedReceita", JSON.stringify(receita));
+  };
 
-    const handleForm = () => {
-        props.updateAberto(true);
-        props.updateShowLista(false);
-      };
+  const handleForm = () => {
+    props.updateAberto(true);
+    props.updateShowLista(false);
+  };
 
-    return (
-        <div className="item-lista">
-          <div>{ingrediente.nome}</div>
-          <div>
-            <button
-              onClick={() => {
-                selectIngrediente(ingrediente);
-                handleForm();
-              }}
-            >
-              Info
-            </button>
-          </div>
+  return (
+   
+      <div className="receita">
+        <b>Receita:</b>
+        <div>{receita.receita}</div>
+        <div>
+          <button
+            onClick={() => {
+              selectReceita(receita);
+              handleForm();
+            }}
+          >
+            Editar
+          </button>
         </div>
-      );
-    };
+      </div>
     
-    export default ItemLista;
+  );
+};
+
+export default ItemLista;

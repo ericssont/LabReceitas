@@ -1,6 +1,18 @@
-table,
-tr,
-td,
-th {
-  border: solid 0.5pt;
+
+.receita{
+  text-align: center;
+  padding: 5px;
+  width: 30%;
+  margin: auto;
+  background-color: #f0c141;
+  border-radius: 10px 10px;
+  
+}
+.filtro{
+  text-align: center;
+  padding: 5px;
+  width: 30%;
+  margin: auto;
+  background-color: #fae5aa;
+  border-radius: 10px 10px;
 }

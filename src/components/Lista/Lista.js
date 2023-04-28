@@ -3,45 +3,52 @@ import ItemLista from "./ItemLista";
 import { useEffect, useState } from "react";
 
 const Lista = (props) => {
-  const [ingredientes, setIngredientes] = useState([]);
+  const [receitas, setReceitas] = useState([]);
   const [semGlutem, setSemGlutem] = useState(false);
   const [semLactose, setSemLactose] = useState(false);
-  const [selectedIngredientes, setSelectedIngredientes] = useState([]);
+  const [selectedReceitas, setSelectedReceitas] = useState([]);
 
   useEffect(() => {
-    const data = localStorage.getItem("ingredientes")
-      ? JSON.parse(localStorage.getItem("ingredientes"))
+    const data = localStorage.getItem("receitas")
+      ? JSON.parse(localStorage.getItem("receitas"))
       : [];
-    setIngredientes(data);
-    setSelectedIngredientes(data);
+    setReceitas(data);
+    setSelectedReceitas(data);
   }, []);
 
+  // ******* Filtro de itens ****************
+
   const handleFiltroGlu = () => {
-    const selected = ingredientes.filter(
-      (ingredientes) => ingredientes.semGlutem === semGlutem
+    const selected = receitas.filter(
+      (receita) => receita.semGlutem === semGlutem
     );
-    setSelectedIngredientes(selected);
+    setSelectedReceitas(selected);
   };
 
   const handleFiltroLac = () => {
-    const selected = ingredientes.filter(
-      (ingredientes) => ingredientes.semLactose === semLactose
+    const selected = receitas.filter(
+      (receita) => receita.semLactose === semLactose
     );
-    setSelectedIngredientes(selected);
+    setSelectedReceitas(selected);
   };
+
+  //   ****** Limpeza de itens ***************
 
   const limpaFiltroGLu = () => {
     setSemGlutem(false);
-    setSelectedIngredientes(ingredientes);
+    setSelectedReceitas(receitas);
   };
 
   const limpaFiltroLac = () => {
     setSemLactose(false);
-    setSelectedIngredientes(ingredientes);
+    setSelectedReceitas(receitas);
   };
+
+  /* botões filtros */
 
   return (
     <div>
+      <div className="filtro">
       <form onSubmit={(e) => e.preventDefault()}>
         <b>Filtro</b> <br />
         <label>
@@ -51,29 +58,34 @@ const Lista = (props) => {
             name="semGlutem"
             onChange={(event) => setSemGlutem(!semGlutem)}
             checked={semGlutem}
-          />
+          /> 
+        <br />
         </label>
+        <button onClick={handleFiltroGlu}>Filtrar</button>
+        <button onClick={limpaFiltroGLu}>Limpar</button>
+        <br />
         <label>
-          Sem Lactose
+          Sem derivados de leite
           <input
             type="checkbox"
             name="semLactose"
             onChange={(event) => setSemLactose(!semLactose)}
             checked={semLactose}
           />
+          <br />
         </label>
-        <br />
-        <button onClick={handleFiltroGlu}>Filtrar</button>
-        <button onClick={limpaFiltroGLu}>Limpar</button>
         <button onClick={handleFiltroLac}>Filtrar</button>
         <button onClick={limpaFiltroLac}>Limpar</button>
       </form>
-      {selectedIngredientes &&
-        selectedIngredientes.map((ingrediente) => (
+      </div>
+      <br />
+
+      {selectedReceitas &&
+        selectedReceitas.map((receita) => (
           <ItemLista
-            ingrediente={ingrediente}
-            ingredientes={ingredientes}
-            key={ingrediente.nome}
+            receita={receita}
+            receitas={receitas}
+            key={receita.nome}
             updateAberto={props.updateAberto}
             updateShowLista={props.updateShowLista}
           />

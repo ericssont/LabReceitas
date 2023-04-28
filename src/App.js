@@ -3,12 +3,12 @@ import Popup from "./components/Popup/Popup";
 import Lista from "./components/Lista/Lista";
 
 function App() {
-  const [ingredientes, setIngredientes] = useState([]);
+  const [receitas, setReceitas] = useState([]);
   const [showLista, setShowLista] = useState(true);
   const [aberto, setAberto] = useState(false);
 
-  const updateIngredientes = (value) => {
-    setIngredientes(value);
+  const updateReceitas = (value) => {
+    setReceitas(value);
   };
   const updateShowLista = (value) => {
     setShowLista(value);
@@ -18,27 +18,27 @@ function App() {
   };
 
   useEffect(() => {
-    const data = localStorage.getItem("ingredientes")
-      ? JSON.parse(localStorage.getItem("ingredientes"))
+    const data = localStorage.getItem("receitas")
+      ? JSON.parse(localStorage.getItem("receitas"))
       : [];
-    setIngredientes(data);
+    setReceitas(data);
   }, []);
 
   return (
-    <div className="App">
+    <div>
       <Popup
         updateAberto={updateAberto}
         aberto={aberto}
-        updateIngredientes={updateIngredientes}
-        ingredientes={ingredientes}
+        updateReceitas={updateReceitas}
+        receitas={receitas}
         updateShowLista={updateShowLista}
       />
       {showLista && (
         <Lista
-          ingredientes={ingredientes}
+          receitas={receitas}
           updateAberto={updateAberto}
           updateShowLista={updateShowLista}
-          updateIngredientes={updateIngredientes}
+          updateReceitas={updateReceitas}
         />
       )}
     </div>

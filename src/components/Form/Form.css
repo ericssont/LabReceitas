@@ -1,0 +1,18 @@
+
+
+.area-inicial {
+  text-align: center;
+  padding: 5px;
+  width: 30%;
+  margin: auto;
+  background-color: rgb(252, 235, 189);
+  border-radius: 10px 10px;
+  
+}
+.btn {
+  background: rgb(247, 190, 2);
+  padding: 5px 10px;
+  border-radius: 50px 50px;
+  color: aliceblue;
+}
+
