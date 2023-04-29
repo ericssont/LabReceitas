@@ -1,23 +1,27 @@
-# Projeto Avaliativo - FuturoDEV
+# Projeto avaliativo FuturoDEV
 
-###### INTRODUÇÃO:
+## LabReceitas - Controle de Receitas Online
 
-Uma empresa especializada em desenvolvimento de aplicações deseja desenvolver uma aplicação para controle de receitas online. Com isso, a LAB Foods está contratando novos desenvolvedores para o seu quadro de colaboradores, com o intuito de expandir os negócios Os gestores entendem que antes de finalizar as contratações, é necessário executar um desafio prático onde o futuro colaborador deverá criar um sistema de lista de compras. É hora de ficar feliz, pois você foi escolhido para criar o LabReceitas.
+<p>Este projeto é parte de um desafio prático proposto pela LAB Foods para avaliar desenvolvedores em potencial. O objetivo é criar uma aplicação que permita ao usuário criar, visualizar e gerenciar receitas de forma fácil e eficiente.</>
 
-###### REQUISITOS DA APLICAÇÃO:
+#### Requisitos da aplicação
+A aplicação deve ser desenvolvida em React e atender aos seguintes requisitos:
 
-A aplicação que deverá ser realizada individualmente, deve ser desenvolvida utilizando React e contemplar os seguintes requisitos: <br/>
+Título na aba do navegador para facilitar a identificação da aplicação;
+Cabeçalho dentro da página para indicar em qual página o usuário se encontra e do que se trata o conteúdo;
+Três campos de seleção para filtrar receitas por "Sem derivados de leite", "Sem Glúten" e "Todas";
+Botão para filtrar as receitas;
+Botão para adicionar uma nova receita. Ao ser pressionado, a aplicação deve apresentar um pop-up para cadastro da receita, com os seguintes campos: nome, ingredientes, modo de preparo e restrições (lactose ou glúten);
+Possibilidade de editar ou excluir as informações da receita. Ao pressionar o botão de edição (!), a aplicação deve apresentar um pop-up com as informações da receita e dois botões: "Alterar" ou "Excluir";
+Lista de receitas deve ser salva no localStorage do navegador, incluindo as receitas que foram excluídas. A lista deve ser carregada sempre que a página for reaberta.
+Como utilizar a aplicação
+Para utilizar a aplicação, basta abrir o arquivo "index.html" em seu navegador preferido. Ao carregar a página, você verá a lista de receitas existentes, juntamente com os campos de filtro e botões de ação.
 
-1. Um título na aba do navegador, para que o usuário encontre a sua aplicação no meio das várias abas que constantemente mantém abertas.
-2. Um cabeçalho dentro da página, para que o usuário saiba facilmente em que página se encontra e do que se trata o conteúdo.
-3. Três campos de seleção no para que o usuário escolha filtrar receitas por “Sem derivados de leite”, “Sem Glúten” e “Todas”.
-4. Um botão para filtrar as receitas.
-5. Um botão para adicionar uma nova receita. Quando pressionado o + a aplicação deve apresentar um pop-up para cadastro de uma nova receita, com os seguintes campos:
+Para adicionar uma nova receita, basta clicar no botão "+" e preencher os campos solicitados. Ao finalizar, clique em "Salvar" para adicionar a receita à lista.
 
-- Nome
-- Ingredientes
-- Modo de Preparo
-- Restrições (Lactose ou Glúten)
+Para filtrar as receitas, basta selecionar as opções desejadas nos campos de filtro e clicar em "Filtrar".
 
-6. O usuário poderá editar as informações da receita ou excluí-la. Quando o usuário pressionar a ! a aplicação deve apresentar um pop-up contendo as informações da receita e dois botões: Alterar ou Excluir.
-7. A lista deve ser salva no localStorage do navegador (incluindo as receitas que já foram excluídas), e deve ser carregada sempre que a página for reaberta.
+Para editar ou excluir uma receita existente, basta clicar no botão "!" e selecionar a opção desejada no pop-up.
+
+### Considerações finais
+Este projeto foi desenvolvido como parte de um desafio avaliativo e possui fins educativos. Sinta-se à vontade para utilizá-lo como base para seus próprios projetos ou para aprimorar suas habilidades em React.

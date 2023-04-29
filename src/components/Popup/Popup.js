@@ -1,6 +1,6 @@
 import Form from "../Form/Form";
 import "../../index.css";
-import buttonImage from "../../assets/plus.png";
+import buttonImage from "../../assets/adicionar.png";
 
 const Popup = (props) => {
   const { aberto } = props;
@@ -11,7 +11,7 @@ const Popup = (props) => {
           src={buttonImage}
           alt="Botão adicionar Receita."
           title="Clique para adicionar uma nova receita."
-          width={60}
+          width={50}
           onClick={() => {
             props.updateAberto(true);
             props.updateShowLista(false);
