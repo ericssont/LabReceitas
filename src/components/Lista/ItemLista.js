@@ -16,7 +16,6 @@ const ItemLista = (props) => {
   return (
     <div className="receita">
       <div>
-        
         <b>Receita: </b> {receita.receita}{" "}
         <img
           src={buttonEdit}

@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import "./Form.css";
 
 const Form = (props) => {
-  const [form, setForm] = useState({receita: "", ingredientes: "", preparo: ""});
+  const [form, setForm] = useState({
+    receita: "",
+    ingredientes: "",
+    preparo: "",
+  });
   const [receitas, setReceitas] = useState([]);
   const [selectedReceita, setSelectedReceita] = useState();
   const [ingredientes, setIngrediente] = useState([]);
-
 
   useEffect(() => {
     const receita = JSON.parse(localStorage.getItem("selectedReceita"));
@@ -102,8 +105,6 @@ const Form = (props) => {
     localStorage.removeItem("selectedReceita");
   };
 
- 
-
   const ingredientesList = form.ingredientes
     .split(",")
     .map((ingrediente, index) => <li key={index}>{ingrediente.trim()}</li>);
@@ -129,7 +130,7 @@ const Form = (props) => {
           <div>
             <textarea
               name="ingredientes"
-              value={form.ingredientes.replace(/-/g, '\n')}
+              value={form.ingredientes.replace(/-/g, "\n")}
               onChange={(event) => handleChange(event)}
               required
               placeholder="Ingredientes separados por vígula"
