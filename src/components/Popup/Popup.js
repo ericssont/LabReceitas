@@ -1,22 +1,26 @@
 import Form from "../Form/Form";
 import "../../index.css";
+import buttonImage from "../../assets/plus.png"
 
 
 const Popup = (props) => {
   const { aberto } = props;
   return (
     <div className="area-inicial">
-    <h1>Livro de Receitas Online</h1>
+   
       {!aberto && (
-        <button
-          className="btn"
-          onClick={() => {
-            props.updateAberto(true);
-            props.updateShowLista(false);
-          }}
-          >
-          Adicionar Receita
-        </button>
+        <img
+        src={buttonImage}
+        alt="Botão" width={50}
+        onClick={() => {
+              props.updateAberto(true);
+              props.updateShowLista(false);
+            }}
+        style={{
+          cursor: 'pointer'
+        }}
+      />
+        
       )}
       {aberto && (
         <Form

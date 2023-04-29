@@ -167,11 +167,14 @@ const Form = (props) => {
         </div>
       </div>
 
-      <button type="submit" className="btn">
-        {selectedReceita ? "Alterar" : "Adicionar"}
+      <button 
+      style={{ cursor: "pointer" }} 
+      type="submit" className="btn">
+      {selectedReceita ? "Alterar" : "Adicionar"}
       </button>
       {selectedReceita ? (
         <button
+          style={{ cursor: "pointer" }}
           onClick={(event) => {
             event.preventDefault();
             removeReceita(selectedReceita);
@@ -184,6 +187,7 @@ const Form = (props) => {
         <></>
       )}
       <button
+        style={{ cursor: "pointer" }}
         className="btn"
         onClick={() => {
           handleCancel();

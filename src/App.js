@@ -25,8 +25,17 @@ function App() {
   }, []);
 
   return (
-    <div className="areaTotal">
+    <div className="areaTotal" >
       <div>
+        <div className="titulo">
+          {" "}
+          <h1>Livro de Receitas Online</h1>
+          <h3>
+            Aqui é o seu mais novo site de receitas compartilhadas, mostre seus
+            dotes culinários!!
+          </h3>
+          <br />
+        </div>
         <Popup
           updateAberto={updateAberto}
           aberto={aberto}

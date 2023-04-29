@@ -18,28 +18,17 @@ const Lista = (props) => {
 
   // ******* Filtro de itens ****************
 
-  const handleFiltroGlu = () => {
+  const handleFiltro = () => {
     const selected = receitas.filter(
+      (receita) => receita.semLactose === semLactose,
       (receita) => receita.semGlutem === semGlutem
-    );
-    setSelectedReceitas(selected);
-  };
-
-  const handleFiltroLac = () => {
-    const selected = receitas.filter(
-      (receita) => receita.semLactose === semLactose
     );
     setSelectedReceitas(selected);
   };
 
   //   ****** Limpeza de itens ***************
 
-  const limpaFiltroGLu = () => {
-    setSemGlutem(false);
-    setSelectedReceitas(receitas);
-  };
-
-  const limpaFiltroLac = () => {
+  const limpaFiltro = () => {
     setSemLactose(false);
     setSelectedReceitas(receitas);
   };
@@ -49,35 +38,48 @@ const Lista = (props) => {
   return (
     <div>
       <div className="filtro">
-      <form onSubmit={(e) => e.preventDefault()}>
-        <b>Filtro</b> <br />
-        <label>
-          Sem Glúten
-          <input
-            type="checkbox"
-            name="semGlutem"
-            onChange={(event) => setSemGlutem(!semGlutem)}
-            checked={semGlutem}
-          /> 
-        <br />
-        </label>
-        <button className="btn" onClick={handleFiltroGlu}>Filtrar</button>
-        <button className="btn" onClick={limpaFiltroGLu}>Limpar</button>
-        <br />
-        <label>
-          Sem derivados de leite
-          <input
-            type="checkbox"
-            name="semLactose"
-            onChange={(event) => setSemLactose(!semLactose)}
-            checked={semLactose}
-          />
+        <form onSubmit={(e) => e.preventDefault()}>
+          <b>Filtrar</b> <br />
+          <label>
+            Sem Glúten
+            <input
+              type="checkbox"
+              name="semGlutem"
+              onChange={(event) => setSemGlutem(!semGlutem)}
+              checked={semGlutem}
+            />
+          </label>
           <br />
-        </label>
-        <button className="btn" onClick={handleFiltroLac}>Filtrar</button>
-        <button className="btn" onClick={limpaFiltroLac}>Limpar</button>
-        <br />
-      </form>
+          <label>
+            Sem derivados de leite
+            <input
+              type="checkbox"
+              name="semLactose"
+              onChange={(event) => setSemLactose(!semLactose)}
+              checked={semLactose}
+            />
+            <br />
+          </label>
+          <button
+            className="btn"
+            onClick={handleFiltro}
+            style={{
+              cursor: "pointer",
+            }}
+          >
+            Filtrar
+          </button>
+          <button
+            className="btn"
+            onClick={limpaFiltro}
+            style={{
+              cursor: "pointer",
+            }}
+          >
+            Limpar
+          </button>
+          <br />
+        </form>
       </div>
       <br />
 

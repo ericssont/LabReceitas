@@ -1,4 +1,5 @@
 import "./Lista.css";
+import buttonEdit from "../../assets/antecao.png";
 
 const ItemLista = (props) => {
   const { receita } = props;
@@ -13,22 +14,26 @@ const ItemLista = (props) => {
   };
 
   return (
-   
-      <div className="receita">
-        <b>Receita:</b>
-        <div>{receita.receita}</div>
-        <div>
-          <button className="btn"
-            onClick={() => {
-              selectReceita(receita);
-              handleForm();
-            }}
-          >
-            Editar
-          </button>
-        </div>
+
+    <div className="receita">
+      
+        <div> <b>Receita: </b> {receita.receita}</div>
+      
+      <div>
+        <img
+          src={buttonEdit}
+          alt="Botão"
+          width={50}
+          onClick={() => {
+            selectReceita(receita);
+            handleForm();
+          }}
+          style={{
+            cursor: "pointer",
+          }}
+        />
       </div>
-    
+    </div>
   );
 };
 
