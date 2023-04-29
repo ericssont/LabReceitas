@@ -2,16 +2,16 @@
   margin: 0;
 }
 
+body{
+  background: url('../src/assets/fundo1.jpg');
+}
+
 .titulo{
   background-color: rgb(250, 249, 245);
   font-size: large;
   padding: 10px;
   text-align: center;
   
-}
-
-body{
-  background: url('../src/assets/fundo1.jpg');
 }
 
 .area-inicial {
