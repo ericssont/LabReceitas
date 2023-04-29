@@ -9,8 +9,8 @@ const Popup = (props) => {
       {!aberto && (
         <img
           src={buttonImage}
-          alt="Botão adicionar Receita"
-          title="Clique para adicionar uma nova receita"
+          alt="Botão adicionar Receita."
+          title="Clique para adicionar uma nova receita."
           width={60}
           onClick={() => {
             props.updateAberto(true);

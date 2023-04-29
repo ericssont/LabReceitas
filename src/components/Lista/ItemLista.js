@@ -18,6 +18,7 @@ const ItemLista = (props) => {
       <div>
         <b>Receita: </b> {receita.receita}{" "}
         <img
+          title="Clique para editar sua receita."
           src={buttonEdit}
           alt="Botão"
           width={20}

@@ -120,7 +120,7 @@ const Form = (props) => {
             onChange={(event) => handleChange(event)}
             value={form.receita}
             required
-            placeholder="Nome da sua receita"
+            placeholder="Nome da sua receita."
           />
         </label>
       </div>
@@ -133,7 +133,7 @@ const Form = (props) => {
               value={form.ingredientes.replace(/-/g, "\n")}
               onChange={(event) => handleChange(event)}
               required
-              placeholder="Ingredientes separados por vígula"
+              placeholder="Ingredientes separados por vígula."
             />
             <ul>{ingredientesList}</ul>
           </div>
@@ -148,7 +148,7 @@ const Form = (props) => {
             onChange={(event) => handleChange(event)}
             value={form.preparo}
             required
-            placeholder="Digite aqui os seus segredos "
+            placeholder="Digite aqui os seus segredos. "
           />
         </label>
       </div>
