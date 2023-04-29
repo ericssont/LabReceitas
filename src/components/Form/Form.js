@@ -95,9 +95,15 @@ const Form = (props) => {
     localStorage.removeItem("selectedReceita");
   };
 
+  const handleCancel = () => {
+    props.updateAberto(false);
+    props.updateShowLista(true);
+    localStorage.removeItem("selectedReceita");
+  };
+
   return (
-    <form className="btn-form" onSubmit={(event) => handleSubmit(event)}>
-      <div className="btn-form">
+    <form onSubmit={(event) => handleSubmit(event)}>
+      <div>
         <label>
           Receita: <br />
           <input
@@ -109,7 +115,7 @@ const Form = (props) => {
           />
         </label>
       </div>
-      <div className="btn-form">
+      <div>
         <label>
           Ingredientes: <br />
           <div>
@@ -123,7 +129,7 @@ const Form = (props) => {
           </div>
         </label>
       </div>
-      <div className="btn-form">
+      <div>
         <label>
           Modo de preparo: <br />
           <textarea
@@ -136,7 +142,7 @@ const Form = (props) => {
         </label>
       </div>
 
-      <div className="btn-form">
+      <div>
         <h3>Restrições:</h3>
         <label>
           Sem Glúten
@@ -148,7 +154,7 @@ const Form = (props) => {
           />
         </label>
 
-        <div className="btn-form">
+        <div>
           <label>
             Sem derivados de leite
             <input
@@ -177,6 +183,14 @@ const Form = (props) => {
       ) : (
         <></>
       )}
+      <button
+        className="btn"
+        onClick={() => {
+          handleCancel();
+        }}
+      >
+        Cancelar
+      </button>
     </form>
   );
 };

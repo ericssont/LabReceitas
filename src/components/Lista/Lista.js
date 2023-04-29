@@ -61,8 +61,8 @@ const Lista = (props) => {
           /> 
         <br />
         </label>
-        <button onClick={handleFiltroGlu}>Filtrar</button>
-        <button onClick={limpaFiltroGLu}>Limpar</button>
+        <button className="btn" onClick={handleFiltroGlu}>Filtrar</button>
+        <button className="btn" onClick={limpaFiltroGLu}>Limpar</button>
         <br />
         <label>
           Sem derivados de leite
@@ -74,8 +74,9 @@ const Lista = (props) => {
           />
           <br />
         </label>
-        <button onClick={handleFiltroLac}>Filtrar</button>
-        <button onClick={limpaFiltroLac}>Limpar</button>
+        <button className="btn" onClick={handleFiltroLac}>Filtrar</button>
+        <button className="btn" onClick={limpaFiltroLac}>Limpar</button>
+        <br />
       </form>
       </div>
       <br />

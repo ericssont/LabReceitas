@@ -25,22 +25,24 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Popup
-        updateAberto={updateAberto}
-        aberto={aberto}
-        updateReceitas={updateReceitas}
-        receitas={receitas}
-        updateShowLista={updateShowLista}
-      />
-      {showLista && (
-        <Lista
-          receitas={receitas}
+    <div className="areaTotal">
+      <div>
+        <Popup
           updateAberto={updateAberto}
-          updateShowLista={updateShowLista}
+          aberto={aberto}
           updateReceitas={updateReceitas}
+          receitas={receitas}
+          updateShowLista={updateShowLista}
         />
-      )}
+        {showLista && (
+          <Lista
+            receitas={receitas}
+            updateAberto={updateAberto}
+            updateShowLista={updateShowLista}
+            updateReceitas={updateReceitas}
+          />
+        )}
+      </div>
     </div>
   );
 }

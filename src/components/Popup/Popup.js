@@ -1,10 +1,12 @@
 import Form from "../Form/Form";
+import "../../index.css";
+
 
 const Popup = (props) => {
   const { aberto } = props;
   return (
     <div className="area-inicial">
-    <h1>Caderno de Receitas</h1>
+    <h1>Livro de Receitas Online</h1>
       {!aberto && (
         <button
           className="btn"

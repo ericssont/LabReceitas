@@ -18,7 +18,7 @@ const ItemLista = (props) => {
         <b>Receita:</b>
         <div>{receita.receita}</div>
         <div>
-          <button
+          <button className="btn"
             onClick={() => {
               selectReceita(receita);
               handleForm();
