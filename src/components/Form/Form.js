@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import "./Form.css";
 
 const Form = (props) => {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({receita: "", ingredientes: "", preparo: ""});
   const [receitas, setReceitas] = useState([]);
   const [selectedReceita, setSelectedReceita] = useState();
   const [ingredientes, setIngrediente] = useState([]);
+
 
   useEffect(() => {
     const receita = JSON.parse(localStorage.getItem("selectedReceita"));
@@ -101,6 +102,12 @@ const Form = (props) => {
     localStorage.removeItem("selectedReceita");
   };
 
+ 
+
+  const ingredientesList = form.ingredientes
+    .split(",")
+    .map((ingrediente, index) => <li key={index}>{ingrediente.trim()}</li>);
+
   return (
     <form onSubmit={(event) => handleSubmit(event)}>
       <div>
@@ -112,6 +119,7 @@ const Form = (props) => {
             onChange={(event) => handleChange(event)}
             value={form.receita}
             required
+            placeholder="Nome da sua receita"
           />
         </label>
       </div>
@@ -121,11 +129,12 @@ const Form = (props) => {
           <div>
             <textarea
               name="ingredientes"
-              value={form.ingredientes}
+              value={form.ingredientes.replace(/-/g, '\n')}
               onChange={(event) => handleChange(event)}
               required
+              placeholder="Ingredientes separados por vígula"
             />
-            <ul>{ingredientes}</ul>
+            <ul>{ingredientesList}</ul>
           </div>
         </label>
       </div>
@@ -138,6 +147,7 @@ const Form = (props) => {
             onChange={(event) => handleChange(event)}
             value={form.preparo}
             required
+            placeholder="Digite aqui os seus segredos "
           />
         </label>
       </div>
@@ -167,17 +177,19 @@ const Form = (props) => {
         </div>
       </div>
 
-      <button 
-      style={{ cursor: "pointer" }} 
-      type="submit" className="btn">
-      {selectedReceita ? "Alterar" : "Adicionar"}
+      <button style={{ cursor: "pointer" }} type="submit" className="btn">
+        {selectedReceita ? "Alterar" : "Adicionar"}
       </button>
       {selectedReceita ? (
         <button
           style={{ cursor: "pointer" }}
           onClick={(event) => {
             event.preventDefault();
-            removeReceita(selectedReceita);
+            if (
+              window.confirm("Tem certeza que deseja excluir esta receita?")
+            ) {
+              removeReceita(selectedReceita);
+            }
           }}
           className="btn"
         >

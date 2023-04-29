@@ -10,11 +10,8 @@
   
 }
 
-.areaTotal{
-  background: url('../src/assets/fundo.png');
-  background-repeat: repeat-x;
-  width: 100vw;
-  height: 100vh;
+body{
+  background: url('../src/assets/fundo1.jpg');
 }
 
 .area-inicial {

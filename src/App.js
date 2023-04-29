@@ -25,15 +25,13 @@ function App() {
   }, []);
 
   return (
-    <div className="areaTotal" >
+    <div className="areaTotal">
       <div>
         <div className="titulo">
           {" "}
           <h1>Livro de Receitas Online</h1>
-          <h3>
-            Aqui é o seu mais novo site de receitas compartilhadas, mostre seus
-            dotes culinários!!
-          </h3>
+          <h3>Diário on-line de receitas!!</h3>
+          <h4>Aqui eu sou o Mestre Cuca</h4>
           <br />
         </div>
         <Popup
