@@ -7,7 +7,9 @@ body{
 }
 
 .titulo{
-  background-color: rgb(250, 249, 245);
+  background-color: #FEFAF7;
+  width: 30%;
+  margin: auto;
   font-size: large;
   padding: 10px;
   text-align: center;
@@ -19,6 +21,6 @@ body{
   padding: 5px;
   width: 30%;
   margin: auto;
-  background-color: rgb(250, 249, 245);
+  background-color: #FEFAF7;
   border-radius: 10px 10px;
 }
