@@ -9,7 +9,7 @@ const Form = (props) => {
   });
   const [receitas, setReceitas] = useState([]);
   const [selectedReceita, setSelectedReceita] = useState();
-  const [ingredientes, setIngrediente] = useState([]);
+  // const [ingredientes, setIngrediente] = useState([]);
 
   useEffect(() => {
     const receita = JSON.parse(localStorage.getItem("selectedReceita"));
