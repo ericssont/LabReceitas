@@ -179,7 +179,7 @@ const Form = (props) => {
       </div>
 
       <button style={{ cursor: "pointer" }} type="submit" className="btn">
-        {selectedReceita ? "Alterar" : "Adicionar"}
+        {selectedReceita ? "Salvar" : "Adicionar"}
       </button>
       {selectedReceita ? (
         <button

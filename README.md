@@ -12,17 +12,20 @@ A aplicação foi desenvolvida em React e atende aos seguintes requisitos:
 - Cabeçalho dentro da página para indicar em qual página o usuário se encontra e do que se trata o conteúdo;
 - Três campos de seleção para filtrar receitas por "Sem derivados de leite", "Sem Glúten" e "Todas";
 - Botão para filtrar as receitas;
-- Botão para adicionar uma nova receita. Ao ser pressionado, a aplicação deve apresentar um pop-up para cadastro da receita, com os seguintes campos: nome, ingredientes, modo de preparo e restrições (lactose ou glúten);
-- Possibilidade de editar ou excluir as informações da receita. Ao pressionar o botão de edição (!), a aplicação deve apresentar um pop-up com as informações da receita e dois botões: "Alterar" ou "Excluir";
-- Lista de receitas deve ser salva no localStorage do navegador, incluindo as receitas que foram excluídas. - A lista deve ser carregada sempre que a página for reaberta.
+- Botão para adicionar uma nova receita. Ao ser pressionado, a aplicação apresenta um pop-up para cadastro da receita, com os seguintes campos: nome (receita), ingredientes, modo de preparo e restrições (lactose ou glúten);
+- Possibilidade de editar ou excluir as informações da receita. Ao pressionar o botão de edição (!), a aplicação apresentará um pop-up com as informações da receita e três botões: "Alterar", "Excluir" ou "Cancelar" ;
+- Lista de receitas será salva no localStorage do navegador, incluindo as receitas que foram excluídas.
+- A lista será carregada sempre que a página for reaberta.
+
 ### Como utilizar a aplicação
-- Para utilizar a aplicação, basta abrir "lab-receita.herokuapp.com/" em seu navegador preferido. Ao carregar a página, você poderá adicionar suas receitas preferidas.
 
-- Para adicionar uma nova receita, basta clicar no botão "+" e preencher os campos solicitados. Ao finalizar, clique em "Salvar" para adicionar a receita à lista.
+- Para utilizar a aplicação, basta abrir ` (clique aqui) [https://www.lab-receita.herokuapp.com/]`. Ao carregar a página, você poderá adicionar suas receitas preferidas.
 
-- Para filtrar as receitas, basta selecionar as opções desejadas nos campos de filtro e clicar em "Filtrar".
+- Para adicionar uma nova receita, basta clicar no botão "+" e preencher os campos solicitados. Ao finalizar, clique em "Adicionar" para adicionar a receita à lista.
 
-- Para editar ou excluir uma receita existente, basta clicar no botão "i" e selecionar a opção desejada no pop-up.
+- Para filtrar as receitas, basta selecionar as opção desejada no checkbox de filtro.
+
+- Para editar ou excluir uma receita existente, basta clicar no botão "i" ao lado do nome da receita e editar a opção desejada no pop-up.
 
 ### Considerações finais
 
