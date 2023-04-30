@@ -135,6 +135,11 @@ const Form = (props) => {
               required
               placeholder="Ingredientes separados por vígula."
             />
+
+            {/* // Não consegui e pelo que encontrei, não teria como colocar 
+            // uma lista nao ordenada dentro do textarea. Logo, deixei assim 
+            // para fazer uma lista abaixo da textarea. Ficou estranho, eu sei! */}
+
             <ul>{ingredientesList}</ul>
           </div>
         </label>
