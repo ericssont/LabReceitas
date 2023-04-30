@@ -9,7 +9,6 @@ const Form = (props) => {
   });
   const [receitas, setReceitas] = useState([]);
   const [selectedReceita, setSelectedReceita] = useState();
-  // const [ingredientes, setIngrediente] = useState([]);
 
   useEffect(() => {
     const receita = JSON.parse(localStorage.getItem("selectedReceita"));
@@ -99,11 +98,15 @@ const Form = (props) => {
     localStorage.removeItem("selectedReceita");
   };
 
+  //  Cancelar ação na edição e retornar ao popup anterior
+
   const handleCancel = () => {
     props.updateAberto(false);
     props.updateShowLista(true);
     localStorage.removeItem("selectedReceita");
   };
+
+  // Para fazer a listagem não ordenada abaixo do textarea de ingredientes
 
   const ingredientesList = form.ingredientes
     .split(",")
