@@ -113,7 +113,8 @@ const Form = (props) => {
     <form onSubmit={(event) => handleSubmit(event)}>
       <div>
         <label>
-          Receita: <br />
+          <b>Receita: </b>
+          <br />
           <input
             type="text"
             name="receita"
@@ -126,7 +127,10 @@ const Form = (props) => {
       </div>
       <div>
         <label>
-          Ingredientes: <br />
+          {" "}
+          <br />
+          <b>Ingredientes: </b>
+          <br />
           <div>
             <textarea
               name="ingredientes"
@@ -145,8 +149,11 @@ const Form = (props) => {
         </label>
       </div>
       <div>
+        {" "}
+        <br />
         <label>
-          Modo de preparo: <br />
+          <b>Modo de preparo: </b>
+          <br />
           <textarea
             type="text"
             name="preparo"
@@ -157,9 +164,10 @@ const Form = (props) => {
           />
         </label>
       </div>
-
+      <br />
       <div>
-        <h3>Restrições:</h3>
+        <b>Restrições:</b>
+        <br />
         <label>
           Sem Glúten
           <input
