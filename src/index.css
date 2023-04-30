@@ -13,6 +13,7 @@ body {
   font-size: large;
   padding: 10px;
   text-align: center;
+  opacity: 0.8;
 }
 
 .area-inicial {
@@ -22,4 +23,5 @@ body {
   margin: auto;
   background-color: #fefaf7;
   border-radius: 10px 10px;
+  opacity: 0.8;
 }

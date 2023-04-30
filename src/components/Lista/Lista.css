@@ -5,6 +5,7 @@
   margin: auto;
   background-color: #fefaf7;
   border-radius: 10px 10px;
+  opacity: 0.8;
 }
 .filtro {
   text-align: center;
@@ -13,4 +14,6 @@
   margin: auto;
   background-color: #fefaf7;
   border-radius: 10px 10px;
+  opacity: 0.8;
+
 }
