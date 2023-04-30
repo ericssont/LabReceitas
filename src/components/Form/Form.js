@@ -148,7 +148,7 @@ const Form = (props) => {
             onChange={(event) => handleChange(event)}
             value={form.preparo}
             required
-            placeholder="Digite aqui os seus segredos. "
+            placeholder="Digite aqui os seus segredos culinários."
           />
         </label>
       </div>
