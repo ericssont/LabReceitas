@@ -147,7 +147,7 @@ const Form = (props) => {
             // uma lista nao ordenada dentro do textarea. Logo, deixei assim 
             // para fazer uma lista abaixo da textarea. Ficou estranho, eu sei! */}
 
-            <ul>{ingredientesList}</ul>
+            <ul className="ingredientes">{ingredientesList}</ul>
           </div>
         </label>
       </div>

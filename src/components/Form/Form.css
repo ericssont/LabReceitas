@@ -5,3 +5,8 @@
   color: rgb(8, 8, 8);
   cursor: "pointer";
 }
+
+.ingredientes{
+  width: 30%;
+  margin: auto;
+}
