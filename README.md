@@ -19,7 +19,7 @@ A aplicação foi desenvolvida em React e atende aos seguintes requisitos:
 
 ### Como utilizar a aplicação
 
-- Para utilizar a aplicação, basta abrir ` [https://www.lab-receita.herokuapp.com/]` em seu navegador preferido. Ao carregar a página, você poderá adicionar suas receitas preferidas.
+- Para utilizar a aplicação, basta abrir ` https://lab-receita.herokuapp.com/` em seu navegador preferido. Ao carregar a página, você poderá adicionar suas receitas preferidas.
 
 - Para adicionar uma nova receita, basta clicar no botão "+" e preencher os campos solicitados. Ao finalizar, clique em "Adicionar" para adicionar a receita à lista.
 
